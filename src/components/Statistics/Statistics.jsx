@@ -13,7 +13,7 @@ export const Statistics = ({
     [2, `Neutral: ${neutral}`],
     [3, `Bad: ${bad}`],
     [4, `Total: ${total}`],
-    [5, `Positive feedback: ${positivePercentage}`],
+    [5, `Positive feedback: ${positivePercentage}%`],
   ];
   const liRender = Array.map(([id, superString]) => {
     return (

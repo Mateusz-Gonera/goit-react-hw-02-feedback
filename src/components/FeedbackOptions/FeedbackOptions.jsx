@@ -14,5 +14,5 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.array.isRequired,
-  //   onLeaveFeedback: PropTypes.func,
+  //   onLeaveFeedback: PropTypes.func.isRequired,
 };

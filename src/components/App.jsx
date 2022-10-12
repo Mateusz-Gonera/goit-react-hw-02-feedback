@@ -13,7 +13,16 @@ export class App extends Component {
     return this.state.good + this.state.neutral + this.state.bad;
   }
 
-  
+  countPositiveFeedbackPercentage() {
+    let percentage = Math.floor(
+      ((this.state.good / this.countTotalFeedback()) * 100).toFixed(0)
+    );
+    if (isNaN(percentage)) {
+      return 0;
+    } else return percentage;
+  }
+
+  fooOnLeaveFeedback() {}
 
   render() {
     return (
@@ -38,7 +47,7 @@ export class App extends Component {
             neutral={this.state.neutral}
             bad={this.state.bad}
             total={this.countTotalFeedback()}
-            positivePercentage={4}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         </Section>
       </div>
