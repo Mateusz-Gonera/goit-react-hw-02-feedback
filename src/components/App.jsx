@@ -22,7 +22,11 @@ export class App extends Component {
     } else return percentage;
   }
 
-  fooOnLeaveFeedback() {}
+  fooOnLeaveFeedback = () => {
+    this.setState(state => {
+      return { good: state.good + 1 };
+    });
+  };
 
   render() {
     return (
@@ -39,7 +43,10 @@ export class App extends Component {
         }}
       >
         <Section title="one header">
-          <FeedbackOptions options={Object.keys(this.state)} />
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.fooOnLeaveFeedback}
+          />
         </Section>
         <Section title="second header">
           <Statistics

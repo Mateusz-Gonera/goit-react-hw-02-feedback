@@ -5,7 +5,9 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const liRender = options.map(option => {
     return (
       <li key={option} className={OptionsCSS.item}>
-        <button className={OptionsCSS.button}>{option}</button>
+        <button onClick={onLeaveFeedback} className={OptionsCSS.button}>
+          {option}
+        </button>
       </li>
     );
   });
