@@ -15,14 +15,15 @@ export const Statistics = ({
     [4, `Total: ${total}`],
     [5, `Positive feedback: ${positivePercentage}%`],
   ];
-  const liRender = Array.map(([id, superString]) => {
-    return (
-      <li key={id} className={StatisticsCSS.item}>
-        <span className={StatisticsCSS.paragraph}>{superString}</span>
-      </li>
-    );
-  });
-  return <ul className={StatisticsCSS.list}>{liRender}</ul>;
+  return (
+    <ul className={StatisticsCSS.list}>
+      {Array.map(([id, superString]) => (
+        <li key={id} className={StatisticsCSS.item}>
+          <span className={StatisticsCSS.paragraph}>{superString}</span>
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 Statistics.propTypes = {
