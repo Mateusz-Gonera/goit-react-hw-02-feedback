@@ -9,18 +9,18 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  countTotalFeedback() {
+  countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
-  }
+  };
 
-  countPositiveFeedbackPercentage() {
+  countPositiveFeedbackPercentage = () => {
     let percentage = Math.floor(
       ((this.state.good / this.countTotalFeedback()) * 100).toFixed(0)
     );
     if (isNaN(percentage)) {
       return 0;
     } else return percentage;
-  }
+  };
 
   fooOnLeaveFeedback = () => {
     this.setState(state => {
