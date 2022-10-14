@@ -22,10 +22,20 @@ export class App extends Component {
     } else return percentage;
   };
 
-  fooOnLeaveFeedback = () => {
-    this.setState(state => {
-      return { good: state.good + 1 };
-    });
+  fooOnLeaveFeedback = feedbackOpt => {
+    switch (feedbackOpt) {
+      case 'good':
+        this.setState(state => ({ good: state.good + 1 }));
+        break;
+      case 'neutral':
+        this.setState(state => ({ neutral: state.neutral + 1 }));
+        break;
+      case 'bad':
+        this.setState(state => ({ bad: state.bad + 1 }));
+        break;
+      default:
+        return 0;
+    }
   };
 
   render() {
