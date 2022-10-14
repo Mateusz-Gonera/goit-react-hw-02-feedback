@@ -54,13 +54,13 @@ export class App extends Component {
           padding: '20px 10px',
         }}
       >
-        <Section title="one header">
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.fooOnLeaveFeedback}
           />
         </Section>
-        <Section title="second header">
+        <Section title="Statistics">
           {this.countTotalFeedback() === 0 ? (
             <Notification message="There is no feedback" />
           ) : (
