@@ -1,4 +1,4 @@
-import StatisticsCSS from './Statistics.module.css';
+import styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
 
 export const Statistics = ({
@@ -16,10 +16,10 @@ export const Statistics = ({
     [5, `Positive feedback: ${positivePercentage}%`],
   ];
   return (
-    <ul className={StatisticsCSS.list}>
+    <ul className={styles.list}>
       {Array.map(([id, superString]) => (
-        <li key={id} className={StatisticsCSS.item}>
-          <span className={StatisticsCSS.paragraph}>{superString}</span>
+        <li key={id} className={styles.item}>
+          <span className={styles.paragraph}>{superString}</span>
         </li>
       ))}
     </ul>
